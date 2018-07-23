@@ -1,0 +1,12 @@
+<!--pages/wss.wxml-->
+<view>
+  <text>
+    <!-- {{state}} -->
+  </text>
+  <form bindsubmit="formSubmit" bindreset="formReset" report-submit>
+    <view class="btn-area">
+      <button formType="submit">Submit</button>
+      <button bindtap="sendMessage">sendMessage</button>
+    </view>
+  </form>
+</view>

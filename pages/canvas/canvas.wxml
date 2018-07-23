@@ -1,0 +1,57 @@
+<!--pages/canvas/canvas.wxml-->
+<view class="container">
+  <canvas class="canvas"  
+    id="canvas" canvas-id="canvas" disable-scroll="true" 
+    bindtouchstart="canvasStart" bindtouchmove="canvasMove" 
+    bindtouchend="canvasEnd" touchcancel="canvasEnd"      
+    binderror="canvasIdErrorCallback">
+      <cover-view
+        class="canvas-button-list">
+        <cover-view
+          style="background-color: {{color}};"
+          class="canvas-button-color"
+          catchtap="bindColorTap">
+        </cover-view> 
+        <cover-image
+          wx:for="{{btnItems}}"
+          wx:key="{{index}}"
+          data-type="{{item.type}}"
+          class="canvas-button-img"
+          bindtap="bindBtnTap"
+          src="{{item.iconUri}}">
+        </cover-image>
+      </cover-view>
+      <!-- 字体大小 -->
+      <cover-view
+        style="display: {{showListType == 'fontSize' ? 'block' : 'none'}}" 
+        class="canvas-selector-items">
+        <cover-view 
+          wx:for="{{fontSizes}}"
+          wx:key="{{index}}"
+          data-index="{{index}}"
+          data-size="{{item.title}}"
+          style="font-size: {{item.size}};"
+          bindtap="bindFontSelectorTap"
+          class="canvas-selector-item">{{item.title}}</cover-view>
+      </cover-view>  
+      <!-- 颜色 -->
+      <cover-view
+        style="display: {{showListType == 'colors' ? 'block' : 'none'}}" 
+        class="canvas-selector-color-list">
+        <cover-view
+          wx:for="{{colors}}"
+          wx:key="{{index}}"
+          class="canvas-selector-color-items">
+          <cover-view 
+            wx:for="{{item}}"
+            wx:for-index="idx" 
+            wx:for-item="current"
+            wx:key="{{idx}}"
+            data-color="{{current}}"
+            bindtap="bindColorSelectorTap"
+            style="background-color: {{current}};"
+            class="canvas-selector-color-item"></cover-view>
+        </cover-view> 
+      </cover-view> 
+    </canvas>  
+</view>

@@ -1,0 +1,7 @@
+<!--pages/werun/werun.wxml-->
+<view>
+  当前日期 {{runData.time || null}}
+</view>
+<view>
+  步数~ {{runData.step || -1}}
+</view>

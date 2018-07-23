@@ -1,0 +1,94 @@
+/* pages/canvas/canvas.wxss */
+Page {    
+  background-color: #f7f7f8;
+  width: 100vw;  
+  height: 100vh;      
+}    
+
+.canvas{  
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.canvas-button-list {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 12rpx;
+  background-color: rgba(255, 255, 255, .6);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: visible;
+}
+
+.canvas-button-color,
+.canvas-button-img {
+  width: 60rpx;
+  height: 60rpx;
+  padding: 20rpx;
+}  
+
+.canvas-button-color {
+  border-radius: 50%;
+  padding: 0;
+}
+
+.temp {
+  position: relative;
+}
+
+.temp::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 0;
+  height: 0;
+  margin-left: -10rpx;
+  border-top: 20rpx solid #00f;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+}
+
+.canvas-selector-items,
+.canvas-selector-color-list {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 100rpx;
+  width: 100%;
+  background-color: rgba(233, 233, 233, .6);
+  border-bottom: 1rpx solid #f7f7f8;
+}
+
+.canvas-selector-color-list {
+  padding: 30rpx 0;
+}
+
+.canvas-selector-item {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 20rpx;
+  text-align: center;
+}
+
+.canvas-selector-color-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.canvas-selector-color-item {
+  width: 92rpx;
+  height: 92rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}

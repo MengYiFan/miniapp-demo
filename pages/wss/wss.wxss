@@ -1,0 +1,13 @@
+/* pages/wss.wxss */
+.btn-area {
+  margin-top: 200rpx;
+}
+
+.btn-area button {
+  margin-bottom: 30rpx;
+  width: 300rpx;
+  color: #444;
+  border: none;
+  border-radius: 12rpx;
+  background-color: transparent;
+}

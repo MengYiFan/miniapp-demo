@@ -1,0 +1,15 @@
+<!--pages/canvasEvent/canvasEvent.wxml--> 
+<canvas canvas-id="canvas-cover" class="canvas-cover"></canvas>
+
+<canvas
+  class="canvas"
+  canvas-id="canvas"
+  bindtouchstart="start"
+  bindtouchmove="move"
+  bindtouchend="end" >
+  <!-- <cover-image
+    class="avatar"
+    src="../../images/avatar.png"
+  ></cover-image> -->
+</canvas> 
+

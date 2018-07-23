@@ -1,0 +1,25 @@
+/* pages/canvasEvent/canvasEvent.wxss */
+Page {    
+  background-color: #f7f7f8;
+  width: 100vw;  
+  height: 100vh;      
+}    
+
+.avatar {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 242rpx;
+  height: 364rpx;
+  opacity: .9;
+}
+
+.canvas,
+.canvas-btn,
+.canvas-cover {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+}
