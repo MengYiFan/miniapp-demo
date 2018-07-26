@@ -5,7 +5,8 @@
     "pages/wss/wss",
     "pages/werun/werun",
     "pages/canvas/canvas",
-    "pages/canvasEvent/canvasEvent"
+    "pages/canvasEvent/canvasEvent",
+    "pages/redPacket/redPacket"
   ],
   "window": {
     "backgroundTextStyle": "light",

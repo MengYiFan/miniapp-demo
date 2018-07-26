@@ -5,9 +5,20 @@
 
 .btn-area button {
   margin-bottom: 30rpx;
-  width: 300rpx;
-  color: #444;
+  padding: 20rpx;
+  margin: 30rpx 100rpx;
+  font-size: 32rpx;
+  color: #666;
   border: none;
   border-radius: 12rpx;
   background-color: transparent;
+  transition: all .5s;
+}
+
+.btn-area button:active {
+  background: #eee;
+}
+
+.cannot-send {
+  background: #eee;
 }

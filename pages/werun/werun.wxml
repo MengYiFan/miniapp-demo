@@ -1,7 +1,12 @@
 <!--pages/werun/werun.wxml-->
-<view>
-  当前日期 {{runData.time || null}}
-</view>
-<view>
-  步数~ {{runData.step || -1}}
+<view class="werun">
+  <view>
+    <label>当前日期</label>
+    {{runData.time || null}}
+  </view>
+  <view>
+    <label>运动步数</label>
+    {{runData.step || -1}}
+  </view>
+  <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532594113906&di=da2d6d1114c3bde712d457b5e4c562e7&imgtype=0&src=http%3A%2F%2Fd.ifengimg.com%2Fw128%2Fy3.ifengimg.com%2Fa%2F2016_09%2F000a0ee1c0c24bb.gif'></image>
 </view>

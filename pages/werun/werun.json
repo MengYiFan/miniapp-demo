@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "获得微信运动数据"
+  "navigationBarTitleText": "运动数据",
+  "navigationBarBackgroundColor": "#ee9500",
+  "navigationBarTextStyle": "white"
 }

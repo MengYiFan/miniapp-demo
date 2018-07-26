@@ -5,8 +5,8 @@
   </text>
   <form bindsubmit="formSubmit" bindreset="formReset" report-submit>
     <view class="btn-area">
-      <button formType="submit">Submit</button>
-      <button bindtap="sendMessage">sendMessage</button>
+      <button formType="submit">填弹</button>
+      <button bindtap="sendMessage" wx-if="{{sendFlag}}">发射 🚀</button>
     </view>
   </form>
 </view>

@@ -1,0 +1,24 @@
+<!--pages/redPacket/redPacket.wxml-->
+<view class="red-packet">
+  <view class="section">
+    <label class="label">总额</label>
+    <input type="digit" placeholder="0.00" bindinput="bindAmountInput" />
+    <label>元</label>
+  </view>
+  <view class="section">
+    <label class="label">数量</label>
+    <input type="number" placeholder="输入数字" bindinput="bindTotalInput" />
+    <label>个</label>
+  </view>
+  <view class="section">
+    <label bindtap="submitHB" class="submit">发红包</label>
+  </view>
+
+  <view class="red-packet-record">
+    <text wx:for="{{records}}" 
+          wx:key="index"
+          class="{{bestLuck == item.money ? 'best-luck' : ''}}">
+      第{{index + 1}}个红包，获得{{item.money}}元，还剩{{item.remainMoney}}元。
+    </text>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+/* pages/redPacket/redPacket.wxss */
+.red-packet {
+  padding: 20rpx 40rpx 40rpx;
+  font-size: 26rpx;
+  color: #444;
+}
+
+.best-luck {
+  color: #dd0000;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  background-color: #f7f7f8;
+  padding: 0 40rpx;
+  height: 100rpx;
+  border-top: 1rpx solid #efefef;
+}
+
+.section:first-child {
+  border-top: none;
+}
+
+.section input {
+  text-align: right;
+  flex: 1;
+  padding: 0 40rpx;
+  height: 80rpx;
+}
+
+.submit {
+  display: block;
+  width: 100%;
+  text-align: right;
+}

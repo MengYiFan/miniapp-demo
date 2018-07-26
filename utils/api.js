@@ -145,7 +145,8 @@ const wxBizDataCrypt = (encryptedData, iv, cb) => {
               maxReconnect = maxReconnectNumber
               if (app.globalData.currentPath) {
                 wx.redirectTo({
-                  url: app.globalData.currentPath
+                  // url: app.globalData.currentPath
+                  url: '../../pages/werun/werun'
                 })
               }
             }, 2000)

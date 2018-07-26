@@ -1,1 +1,20 @@
 /* pages/werun/werun.wxss */
+.werun {
+  padding: 60rpx;
+  box-sizing: border-box;
+  font-size: 36rpx;
+  color: #666;
+}
+
+.werun label {
+  margin-right: 30rpx;
+}
+
+image {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500rpx;
+  height: 281rpx;
+}

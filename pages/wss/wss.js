@@ -17,6 +17,7 @@ Page({
     if (!this.data.sendFlag) {
       return
     }
+
     let openid = this.data.openid
     wxRequest({
       url: 'https://api.3mishen.com/self/wx/send/message',
@@ -25,7 +26,7 @@ Page({
       },
       method: 'POST',
       success: (res) => {
-        console.log(res.data)
+        console.log(res)
         if (res.ret) {
           this.setData({
             sendFlag: false
@@ -42,7 +43,7 @@ Page({
     let self = this
     let access_token = self.data.access_token
     console.log(self)
-        //dd
+    //dd
     let data = {
       "touser": self.data.openid,
       "template_id": "4nuFfzOu60rPuaq63EbLen_Cd2rdkwY7tpQ9TJhAnZg",

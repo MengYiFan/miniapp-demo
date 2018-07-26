@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "发送模板信息"
+  "navigationBarTitleText": "发送信息",
+  "navigationBarBackgroundColor": "#5f9ea0",
+  "navigationBarTextStyle": "white"
 }
