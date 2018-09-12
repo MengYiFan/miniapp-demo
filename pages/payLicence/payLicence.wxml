@@ -1,0 +1,23 @@
+<!--pages/payLicence/payLicence.wxml-->
+<view class="search">
+  <input placeholder="搜索" bindinput="bindSearchInput"  confirm-type="search"/>
+  <view class="search-btn" 
+        bindtap="searchBtnTap" 
+        style="{{searchValue == '' ? 'color: #b6b6b6;' : ''}}">
+        {{searchBtnText}}
+  </view>
+</view>
+<scroll-view class="table" scroll-y scroll-into-view="{{scrollInto}}">
+  <view 
+    id="cell{{index}}"
+    wx:for="{{tableData}}" 
+    wx:key="index"
+    class="table-cell {{item.highlight ? 'highlight' : ''}}">
+    <span class="table-cell-index">{{index}}</span>
+    <view class="table-cell-title">{{item.id}}</view>
+    <view class="table-cell-content">{{item.company}}</view>
+  </view>
+  <view class="copyright">
+    数据更新于 2018/09/11
+  </view>
+</scroll-view>

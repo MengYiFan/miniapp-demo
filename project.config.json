@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -58,7 +58,25 @@
 				{
 					"id": -1,
 					"name": "redPacket",
-					"pathName": "pages/redPacket/redPacket"
+					"pathName": "pages/redPacket/redPacket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "dynamic",
+					"pathName": "pages/dynamic/dynamic",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "fei",
+					"pathName": "pages/fei/fei",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "payLicence",
+					"pathName": "pages/payLicence/payLicence"
 				}
 			]
 		}

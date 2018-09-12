@@ -1,0 +1,37 @@
+<!--pages/fei/fei.wxml-->
+<swiper 
+  indicator-dots="{{false}}"
+  autoplay="{{false}}" 
+  interval="3000" 
+  duration="500"
+  circular
+  previous-margin="60rpx"
+  next-margin	="60rpx"
+  bindchange="swiperChange">
+  <block wx:for="{{swiperData}}">
+    <swiper-item class="swiper-item">
+      <view class="swiper-content {{swiperStyles[index]}}">
+        <image src="{{item}}" class="slide-image"/>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+
+<scroll-view  upper-threshold="{{upperThreshold}}"	
+              scroll-y style="height: 200px; background: #ddd;" 
+              bindscrolltoupper="upper" 
+              bindscrolltolower="lower" 
+              bindscroll="scroll" 
+              scroll-into-view="{{toView}}" 
+              scroll-top="{{upperThreshold}}"
+              scroll-with-animation="{{true}}">
+    <view  style="height: {{mHeight}}rpx;">
+      <image class="scroll-view-item"
+             src="http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg"
+             style="width: 100%; height: calc({{mHeight - upperThreshold}}rpx); position: relative; top: {{upperThreshold}}rpx">
+      </image>
+    </view>
+    <view class="scroll-view-item">1</view>
+    <view class="scroll-view-item">2</view>
+    <view class="scroll-view-item">3</view>
+  </scroll-view>

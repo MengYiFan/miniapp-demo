@@ -11,6 +11,9 @@ Page({
       { name: '画板 😋', path: '../canvas/canvas' },
       { name: '爱心动画', path: '../canvasEvent/canvasEvent' },
       { name: '红包算法', path: '../redPacket/redPacket' },
+      { name: '支付牌照 💰', path: '../payLicence/payLicence' },
+      // { name: '飞 ✈', path: '../fei/fei' },
+      // { name: '动效 :-)', path: '../dynamic/dynamic' },
     ]
   },
   bindItemTap(e) {

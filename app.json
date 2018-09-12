@@ -6,7 +6,10 @@
     "pages/werun/werun",
     "pages/canvas/canvas",
     "pages/canvasEvent/canvasEvent",
-    "pages/redPacket/redPacket"
+    "pages/redPacket/redPacket",
+    "pages/dynamic/dynamic",
+    "pages/fei/fei",
+    "pages/payLicence/payLicence"
   ],
   "window": {
     "backgroundTextStyle": "light",
