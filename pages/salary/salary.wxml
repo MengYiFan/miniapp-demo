@@ -2,6 +2,7 @@
   <view class="tabs">
     <view class="tab {{tab === 1 ? 'active' : ''}}" bindtap="tabsHandle" data-index="1">梯度设置</view>
     <view class="tab {{tab === 2 ? 'active' : ''}}" bindtap="tabsHandle" data-index="2">业绩设置</view>
+    <view class="tab {{tab === 3 ? 'active' : ''}}" bindtap="tabsHandle" data-index="3">计算器</view>
   </view>
   <view class="salary-container {{showMore ? 'show-more' : 'show-more-no'}}">
     <view class="ladder" wx:if="{{tab == 1}}">
@@ -63,6 +64,65 @@
                   type="number" 
                   value="{{item.value}}"
                   placeholder="0"/>
+        </view>
+      </view>
+    </view>
+    <view class="content compute_month_list" wx:if="{{tab == 3}}">
+      <view class="compute_month">
+        此人，基本工资:
+        <input class="item-input" 
+          type="number"
+          confirm-type="next"
+          value="{{computeMonth.base_salary}}"
+          data-field="base_salary"
+          bindinput="computeInput" />
+      </view>
+      <view class="compute_month">
+        当月，总天数(日):
+        <input class="item-input" 
+          type="number"
+          confirm-type="next"
+          value="{{computeMonth.all_days}}"
+          data-field="all_days"
+          bindinput="computeMonthInput" />
+      </view>
+      <view class="compute_month">
+        当月，总的可休假天数:
+        <input class="item-input" 
+          type="number"
+          confirm-type="next"
+          value="{{computeMonth.all_rest}}"
+          data-field="all_rest"
+          bindinput="computeMonthInput" />
+      </view>
+      <view class="compute_month">
+        当月，此人实际上班天数:
+        <input class="item-input" 
+          type="number"
+          confirm-type="next"
+          value="{{computeMonth.work_days}}"
+          data-field="work_days"
+          bindinput="computeMonthInput" />
+      </view>
+      <view class="compute_month">
+        <view class="item-input" >
+          每日，可得工资: 
+          <view>
+            {{computeMonth.base_salary}} 
+            / 
+            {{computeMonth.all_days}} - {{computeMonth.all_rest}}
+            = 
+            {{computeMonth.daily}}
+          </view>
+        </view>
+        <view class="item-input" >
+          当月可得，基本工资: 
+          <view>
+            {{computeMonth.daily}}
+            * {{computeMonth.work_days}}
+            = 
+            {{computeMonth.result}}
+          </view>
         </view>
       </view>
     </view>

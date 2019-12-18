@@ -98,6 +98,15 @@ Page({
       basicSalary: 0,
       reward: 0,
       amountSalary: 0
+    },
+
+    computeMonth: {
+      base_salary: 2500,
+      all_days: 31,
+      all_rest: 4,
+      work_days: 27,
+      daily: 92.59,
+      result: 2500
     }
   },
 
@@ -287,6 +296,35 @@ Page({
     })
     this.saveStorage(`ladder`, this.data.ladder)
     this.computedFn()
+  },
+
+  computeMonthInput(e) {
+    let value = e.detail.value,
+        field = e.currentTarget.dataset.field
+    
+    this.setData({
+      [`computeMonth.${field}`]: +value
+    })
+
+    try {
+      // base_salary: 2500,
+      // all_days: 31,
+      // all_rest: 4,
+      // work_days: 27,
+      // result: 2500
+      let { base_salary, all_days, all_rest, work_days } = this.data.computeMonth
+      let daily = base_salary / (all_days - all_rest)
+      let result = (daily * work_days).toFixed()
+
+      this.setData({
+        [`computeMonth.result`]: isNaN(result) ? '数据不完整。' : result,
+        [`computeMonth.daily`]: isNaN(daily) ? '数据不完整。' : result
+      })
+    } catch(e) {
+      this.setData({
+        [`computeMonth.result`]: '数据不完整。'
+      })
+    }
   },
 
   commissionInput(e) {
