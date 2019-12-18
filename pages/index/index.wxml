@@ -10,6 +10,11 @@
     </view>
   </view>
   <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+    <text class="user-motto" bindtap="getUserInfoHandle">{{motto}}</text>
   </view>
+
+  <button  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+    授权登录
+  </button>
+
 </view>

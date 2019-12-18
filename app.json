@@ -8,13 +8,14 @@
     "pages/canvasEvent/canvasEvent",
     "pages/redPacket/redPacket",
     "pages/dynamic/dynamic",
-    "pages/fei/fei",
-    "pages/payLicence/payLicence"
+    "pages/payLicence/payLicence",
+    "pages/salary/salary"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

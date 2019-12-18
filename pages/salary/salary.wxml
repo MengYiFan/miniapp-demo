@@ -1,0 +1,112 @@
+<view>
+  <view class="tabs">
+    <view class="tab {{tab === 1 ? 'active' : ''}}" bindtap="tabsHandle" data-index="1">梯度设置</view>
+    <view class="tab {{tab === 2 ? 'active' : ''}}" bindtap="tabsHandle" data-index="2">业绩设置</view>
+  </view>
+  <view class="salary-container {{showMore ? 'show-more' : 'show-more-no'}}">
+    <view class="ladder" wx:if="{{tab == 1}}">
+      <view class="ladder-item" 
+            wx:for="{{ladder}}" 
+            wx:key="{{index}}">
+        <view class="ladder-item-content">
+          <view wx:if="{{index == 0}}">0</view>
+          <view wx:else>{{ladder[index - 1].value}}</view>
+          <view class="ladder-item-split">-</view>
+          <view>
+            <input class="ladder-item-input" 
+                  type="number"
+                  confirm-type="next"
+                  value="{{item.value}}"
+                  data-index="{{index}}" 
+                  bindinput="rangeInput" />
+          </view>
+        </view>
+        <view class="config-list">
+          <view class="config-item" 
+                wx:for="{{item.config}}"
+                wx:for-index="idx"
+                wx:key="{{idx}}"
+                wx:for-item="conf">
+            <view class="config-item-title">{{conf.title}}</view>
+            <input class="config-item-input" 
+                  value="{{conf.commission}}"
+                  data-index="{{index}}" 
+                  data-idx="{{idx}}"
+                  type="number"
+                  confirm-type="next"
+                  data-type="{{conf.type}}"
+                  bindinput="commissionInput"
+                  placeholder="0" />
+            <view class="config-item-symbol">
+              {{conf.type === '奖励' || conf.type === '底薪' ? '' : '%'}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="content" wx:if="{{tab == 2}}">
+      <view class="item" wx:for="{{saleSituation}}" wx:key="{{item.type}}">
+        <view class="content-item-title">{{item.typeValue}}</view>
+        <view class="input-box">
+          <slider class="slider" 
+                  bindchange="valueChange" 
+                  data-type="{{item.type}}" 
+                  min="{{item.min}}" 
+                  max="{{item.max}}" 
+                  value="{{item.value}}"
+                  step="{{item.step}}" />
+          <input  class="input" 
+                  type="number"
+                  confirm-type="next"
+                  bindinput="valueChange"
+                  data-type="{{item.type}}"  
+                  type="number" 
+                  value="{{item.value}}"
+                  placeholder="0"/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="fix">
+    <block wx:if="{{showMore}}">
+      <view>总业绩: {{salaryDetail.saleAmount}}</view>
+      <view>
+        提成档位: 
+        {{salaryDetail.lastLadder.value || 0}} - {{salaryDetail.currentLadder.value}}
+        <view class="mini">
+          <label wx:for="{{salaryDetail.currentLadder.config}}" wx:key="{{index}}">
+            {{item.title}}: {{item.commission}}
+            {{item.title === '奖励' || item.title === '底薪' ? '' : '%'}};
+          </label>
+        </view>
+      </view>
+      <view>
+        提成明细:
+        <view class="mini">
+          <block wx:for="{{salaryDetail.data}}" wx:key="{{index}}">
+            <block wx:if="{{item.status}}">
+              <block wx:if="{{item.data.type === '奖励' || item.data.type === '底薪'}}">
+                {{item.data.type}}: {{item.data.commission}}
+              </block>
+              <view wx:else>
+                {{item.data.type}}: {{item.data.saleVale}} * {{item.data.commission / 100}} = {{item.data.commissionSalary}}
+              </view>
+            </block>
+            <view wx:else>
+              {{item.data.type}}: 计算错误;
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+    <view>
+      总工资: 
+      <view>
+        底薪({{salaryDetail.basicSalary}}) + 提成({{salaryDetail.commissionSalary}}) + 奖励({{salaryDetail.reward}}) = {{salaryDetail.amountSalary}}
+        <label class="show-more-switch" bindtap="showMoreSwitch">
+        {{showMore ? '收起' : '展开'}}
+        </label>
+      </view>
+    </view>
+  </view>
+</view>

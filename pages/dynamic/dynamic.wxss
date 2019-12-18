@@ -1,1 +1,49 @@
-/* pages/dynamic/dynamic.wxss */
+.test {
+  position: fixed;
+  top: 10vw;
+  left: 50px;
+  background: #666;
+  width: calc(100vw - 100px);
+  height: calc(100vw - 0px);
+  margin: 0 auto;
+}
+
+.test2 {
+  background: #f0aa99;
+}
+
+.nav-list {
+  position: fixed;
+  bottom: 50rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  white-space: nowrap;
+  font-size: 48rpx;
+}
+
+.nav-item {
+  position: relative;
+  flex: 1;
+  display: inline-flex;
+  padding: 24rpx;
+  white-space: nowrap;
+}
+
+.nav-active-color {
+  position: absolute;
+  bottom: 36rpx;
+  width: 80%;
+  height: 16rpx;
+  display: block;
+  background-color: yellow;
+  z-index: -1;
+}
+
+.nav-active-bulk {
+  position: absolute;
+  bottom: 24px;
+  background: #333;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}

@@ -42,8 +42,8 @@ Page({
   // 开始画
   canvasStart(e) {
     let touchs = e.touches[0],
-      x = touchs.x,
-      y = touchs.y
+        x = touchs.x,
+        y = touchs.y
 
     this.context.beginPath()
     this.context.moveTo(x, y)

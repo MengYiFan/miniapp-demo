@@ -8,9 +8,11 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.90",
+	"libVersion": "2.6.6",
 	"appid": "wxc0abcb6bf0b43d07",
 	"projectname": "mi_demo",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -69,14 +71,15 @@
 				},
 				{
 					"id": -1,
-					"name": "fei",
-					"pathName": "pages/fei/fei",
+					"name": "payLicence",
+					"pathName": "pages/payLicence/payLicence",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "payLicence",
-					"pathName": "pages/payLicence/payLicence"
+					"name": "salary",
+					"pathName": "pages/salary/salary",
+					"scene": null
 				}
 			]
 		}

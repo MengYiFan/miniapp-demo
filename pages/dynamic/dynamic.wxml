@@ -1,2 +1,18 @@
-<!--pages/dynamic/dynamic.wxml-->
-<text>pages/dynamic/dynamic.wxml</text>
+<view class="dynamic-container" bindtouchstart="touchStart" bindtouchmove="move">
+  <view class="test" animation="{{mainAnimation[1]}}"></view>
+  <view class="test test2" animation="{{mainAnimation[0]}}"></view>
+
+  <scroll-view scroll-x	scroll-into-view="{{toView}}" class="nav-list" bindtap="navHandle">
+    <view id="nav-item-{{index}}"
+          wx:key="{{index}}"
+          wx:for="{{navItems}}" 
+          class="nav-item {{currentNavIndex === index ? 'active' : ''}}"
+          data-index="{{index}}">
+      {{item}}
+    </view>
+    <!-- <view class="nav-active-color" animation="{{colorAnimation}}" ></view> -->
+    <view class="nav-active-bulk" 
+          animation="{{bulkAnimation}}" 
+          style="width: {{circleRadius * 2}}px; height: {{circleRadius * 2}}px; border-radius: {{circleRadius}}px"></view>
+  </scroll-view>
+</view>
