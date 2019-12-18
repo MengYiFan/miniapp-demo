@@ -1,10 +1,12 @@
 // pages/salary.js
+import { ladder, salaryDetail, } from './data.js'
+
 Page({
 
   /**
    * 页面的初始数据
    */
-  data: {
+  data: {    
     showMore: false,
     tab: 1,
     sale: {
@@ -13,6 +15,8 @@ Page({
       step: 1,
       value: 0
     },
+
+    salaryDetail,
     saleSituation: [
       {
         placeholder: '美妆',
@@ -87,7 +91,7 @@ Page({
       }
     ],
 
-    ladder: [],
+    ladder,
 
     salaryDetail: {
       saleAmount: 0,
@@ -105,7 +109,7 @@ Page({
       all_days: 31,
       all_rest: 4,
       work_days: 27,
-      daily: 92.59,
+      daily: 92.593,
       result: 2500
     }
   },
@@ -313,16 +317,17 @@ Page({
       // work_days: 27,
       // result: 2500
       let { base_salary, all_days, all_rest, work_days } = this.data.computeMonth
-      let daily = base_salary / (all_days - all_rest)
-      let result = (daily * work_days).toFixed()
+      let daily = (base_salary / (all_days - all_rest))
+      let result = (daily * work_days).toFixed(3)
 
       this.setData({
         [`computeMonth.result`]: isNaN(result) ? '数据不完整。' : result,
-        [`computeMonth.daily`]: isNaN(daily) ? '数据不完整。' : result
+        [`computeMonth.daily`]: isNaN(daily) ? '数据不完整。' : daily.toFixed(3)
       })
     } catch(e) {
       this.setData({
-        [`computeMonth.result`]: '数据不完整。'
+        [`computeMonth.result`]: '数据不完整。',
+        [`computeMonth.daily`]: '数据不完整。'
       })
     }
   },
@@ -372,6 +377,7 @@ Page({
    */
   onLoad: function (options) {
     let saleSituation = this.getStorage('saleSituation')
+
     if (saleSituation) {
       this.setData({
         saleSituation
@@ -383,7 +389,13 @@ Page({
         ladder: Array.from(ladder)
       })
     } else {
-      this.initLadderData()
+      if (this.data.ladder) {
+        this.setData({
+          ladder: Array.from(this.data.ladder)
+        })
+      } else {
+        this.initLadderData()
+      }
     }
     let salaryDetail = this.getStorage('salaryDetail')
     if (salaryDetail) {

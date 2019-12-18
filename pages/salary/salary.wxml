@@ -110,7 +110,7 @@
           <view>
             {{computeMonth.base_salary}} 
             / 
-            {{computeMonth.all_days}} - {{computeMonth.all_rest}}
+            ({{computeMonth.all_days}} - {{computeMonth.all_rest}})
             = 
             {{computeMonth.daily}}
           </view>
