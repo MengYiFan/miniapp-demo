@@ -45,7 +45,7 @@
         </view>
       </view>
     </view>
-    <view class="content" wx:if="{{tab == 2}}">
+    <view class="content" wx:if="{{tab == 2}}" style="padding-bottom: 160rpx;">
       <view class="item" wx:for="{{saleSituation}}" wx:key="{{item.type}}">
         <view class="content-item-title">{{item.typeValue}}</view>
         <view class="input-box">
